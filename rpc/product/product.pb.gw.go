@@ -79,7 +79,7 @@ func RegisterProductAPIHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/rpc.product.ProductAPI/GetProducts", runtime.WithHTTPPathPattern("/api/products"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/rpc.product.ProductAPI/GetProducts", runtime.WithHTTPPathPattern("/api/product/get-products"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -141,7 +141,7 @@ func RegisterProductAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/rpc.product.ProductAPI/GetProducts", runtime.WithHTTPPathPattern("/api/products"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/rpc.product.ProductAPI/GetProducts", runtime.WithHTTPPathPattern("/api/product/get-products"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -161,7 +161,7 @@ func RegisterProductAPIHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 }
 
 var (
-	pattern_ProductAPI_GetProducts_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "products"}, ""))
+	pattern_ProductAPI_GetProducts_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "product", "get-products"}, ""))
 )
 
 var (

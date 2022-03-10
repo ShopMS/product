@@ -1,14 +1,14 @@
 syntax = "proto3";
 
 package rpc.product;
-option go_package = "github.com/khanhduyy/shopms-product/rpc/product";
+option go_package = "github.com/shopsms/product/rpc/product";
 
 import "google/api/annotations.proto";
 
 service ProductAPI {
     rpc GetProducts(GetProductsRequest) returns (GetProductsResponse) {
         option (google.api.http) = {
-            get: "/api/products"
+            get: "/api/product/get-products"
         };
     };   
 }

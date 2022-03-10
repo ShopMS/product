@@ -1,0 +1,13 @@
+{
+  "details": {
+    "endpoint": "http://localhost:8083",
+    "methodFqn": "rpc.product.ProductAPI.GetProducts"
+  },
+  "requests": [
+    {
+      "location": "GetProducts-request.json"
+    }
+  ],
+  "operationType": "unary",
+  "invokerName": "grpc"
+}

@@ -27,7 +27,7 @@ func NewValues() *values {
 		DBName:   "Product",
 	}
 	return &values{
-		ServerAddress: ":8083",
+		ServerAddress: ":8087",
 		LoggerLevel:   "debug",
 		DB:            database,
 	}
